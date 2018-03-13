@@ -29,7 +29,8 @@ module.exports = (event) => {
     apiaiSession.on('response', (response) => {
         console.log(JSON.stringify(response));
         const result = response.result.fulfillment.speech;
-        if (result == undefined) {
+        console.log(result);
+        if (result == "") {
             console.log("result is empty");
             var color = response.result.parameters.color;
             var number = response.result.parameters.number;
